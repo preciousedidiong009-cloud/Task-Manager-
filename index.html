@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow - Stage 1: Planning and Requirements Analysis for a task manager website.">
+  <title>TaskFlow | Stage 1: Planning &amp; Requirements</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Task<span>Flow</span></a>
+
+      <!-- CSS-only mobile menu toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#users">Users</a></li>
+          <li><a href="#functional">Features</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#non-functional">Quality</a></li>
+          <li><a href="#stack">Tech Stack</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Stage 1 of 8</p>
+        <h1>Planning &amp; Requirements Analysis</h1>
+        <p class="hero-text">
+          Decide <strong>what</strong> you are building and <strong>for whom</strong>
+          before writing a single line of code. This page is the Software
+          Requirements Specification (SRS) for <strong>TaskFlow</strong>, a task manager website.
+        </p>
+
+        <ol class="roadmap" aria-label="Project roadmap">
+          <li class="active">Planning</li>
+          <li>System Design</li>
+          <li>UI/UX</li>
+          <li>Setup</li>
+          <li>Backend</li>
+          <li>Frontend</li>
+          <li>Testing</li>
+          <li>Deployment</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ STEP 1: VISION ============ -->
+    <section id="vision" class="section">
+      <div class="container">
+        <span class="step-badge">Step 1</span>
+        <h2>Define the Problem and Vision</h2>
+
+        <blockquote class="vision-quote">
+          TaskFlow is a web app that lets individuals and small teams create,
+          organize, and track tasks so they never miss a deadline.
+        </blockquote>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>What problem does it solve?</h3>
+            <p>Scattered to-dos, missed deadlines, and no visibility into who is doing what.</p>
+          </article>
+          <article class="card">
+            <h3>Why build it?</h3>
+            <p>Learning, a niche feature, or a custom workflow that Trello or Todoist does not offer.</p>
+          </article>
+          <article class="card">
+            <h3>What is success?</h3>
+            <p>A user can create and complete a task in under 10 seconds.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STEP 2: USERS ============ -->
+    <section id="users" class="section section-alt">
+      <div class="container">
+        <span class="step-badge">Step 2</span>
+        <h2>Identify Users and Stakeholders</h2>
+        <p class="lead">Personas keep feature debates grounded: "Would Ada actually use this?"</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">User personas and their needs</caption>
+            <thead>
+              <tr><th scope="col">Persona</th><th scope="col">Needs</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Ada, freelancer</th>
+                <td>Personal to-dos, due dates, reminders</td>
+              </tr>
+              <tr>
+                <th scope="row">Tunde, team lead</th>
+                <td>Assign tasks, see progress, set priorities</td>
+              </tr>
+              <tr>
+                <th scope="row">Admin <small>(optional)</small></th>
+                <td>Manage users, handle abuse</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STEP 3: FUNCTIONAL REQUIREMENTS ============ -->
+    <section id="functional" class="section">
+      <div class="container">
+        <span class="step-badge">Step 3</span>
+        <h2>Functional Requirements (MoSCoW)</h2>
+        <p class="lead">Functional requirements describe what the system <em>does</em>. Prioritize them so the MVP stays small.</p>
+
+        <div class="grid grid-4">
+          <article class="card moscow must">
+            <h3>Must have <small>MVP</small></h3>
+            <ul>
+              <li>Register, login, logout</li>
+              <li>Create, view, edit, delete tasks</li>
+              <li>Fields: title, description, due date, priority, status</li>
+              <li>Mark tasks complete</li>
+              <li>Users see only their own tasks</li>
+            </ul>
+          </article>
+
+          <article class="card moscow should">
+            <h3>Should have</h3>
+            <ul>
+              <li>Categories or projects, labels</li>
+              <li>Search, filter and sort</li>
+              <li>Password reset by email</li>
+            </ul>
+          </article>
+
+          <article class="card moscow could">
+            <h3>Could have</h3>
+            <ul>
+              <li>Task assignment, shared projects</li>
+              <li>Comments, file attachments</li>
+              <li>Email or push reminders</li>
+              <li>Kanban and calendar views</li>
+            </ul>
+          </article>
+
+          <article class="card moscow wont">
+            <h3>Won't have <small>this version</small></h3>
+            <ul>
+              <li>Native mobile apps</li>
+              <li>Third-party integrations</li>
+              <li>AI features</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note">The "Won't have" list protects you from scope creep.</p>
+      </div>
+    </section>
+
+    <!-- ============ STEP 4: USER STORIES ============ -->
+    <section id="stories" class="section section-alt">
+      <div class="container">
+        <span class="step-badge">Step 4</span>
+        <h2>User Stories with Acceptance Criteria</h2>
+        <p class="lead">Format: <em>As a [user], I want [action], so that [benefit].</em></p>
+
+        <article class="story">
+          <p class="story-text">
+            As a registered user, I want to create a task with a due date,
+            so that I know when it must be done.
+          </p>
+          <h3>Acceptance criteria</h3>
+          <ul class="checklist">
+            <li>Title is required (max 100 characters); description is optional</li>
+            <li>Due date cannot be in the past when creating</li>
+            <li>After saving, the task appears at the top of my task list</li>
+            <li>An error message shows if validation fails</li>
+          </ul>
+          <p class="note">These criteria become your test cases in Stage 7.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STEP 5: NON-FUNCTIONAL ============ -->
+    <section id="non-functional" class="section">
+      <div class="container">
+        <span class="step-badge">Step 5</span>
+        <h2>Non-Functional Requirements</h2>
+        <p class="lead">These describe <em>how well</em> the system works.</p>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Performance</h3>
+            <p>Pages load in under 2 seconds; API responses under 300 ms.</p>
+          </article>
+          <article class="card">
+            <h3>Security</h3>
+            <p>Hashed passwords (bcrypt/argon2), HTTPS, protection against SQL injection, XSS and CSRF, per-user data isolation.</p>
+          </article>
+          <article class="card">
+            <h3>Usability</h3>
+            <p>Responsive design that works on phones, with keyboard navigation and good contrast.</p>
+          </article>
+          <article class="card">
+            <h3>Reliability</h3>
+            <p>Daily database backups and graceful error handling.</p>
+          </article>
+          <article class="card">
+            <h3>Scalability</h3>
+            <p>Supports about 1,000 users at launch, with room to grow.</p>
+          </article>
+          <article class="card">
+            <h3>Compatibility</h3>
+            <p>Latest two versions of Chrome, Firefox, Safari and Edge.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STEP 6: CONSTRAINTS ============ -->
+    <section id="constraints" class="section section-alt">
+      <div class="container">
+        <span class="step-badge">Step 6</span>
+        <h2>Constraints and Assumptions</h2>
+
+        <dl class="definition-grid">
+          <div><dt>Time</dt><dd>e.g., 8 weeks, part-time</dd></div>
+          <div><dt>Budget</dt><dd>Free-tier hosting or paid services?</dd></div>
+          <div><dt>Team</dt><dd>Solo developer or a team of three?</dd></div>
+          <div><dt>Skills</dt><dd>Languages and frameworks you already know</dd></div>
+          <div><dt>Assumptions</dt><dd>Users have internet access; email is the only login method</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ STEP 7: TECH STACK ============ -->
+    <section id="stack" class="section">
+      <div class="container">
+        <span class="step-badge">Step 7</span>
+        <h2>Preliminary Tech Stack</h2>
+        <p class="lead">Pick a stack that fits your skills and constraints. You will finalize it in Stage 2.</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Recommended technology choices per layer</caption>
+            <thead>
+              <tr><th scope="col">Layer</th><th scope="col">Choice</th><th scope="col">Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Frontend</th><td>React (or plain HTML/CSS/JS)</td><td>Component-based, huge ecosystem</td></tr>
+              <tr><th scope="row">Backend</th><td>Node.js + Express</td><td>Same language as the frontend</td></tr>
+              <tr><th scope="row">Database</th><td>PostgreSQL</td><td>Relational data fits users and tasks well</td></tr>
+              <tr><th scope="row">Auth</th><td>JWT or session cookies</td><td>Standard and well documented</td></tr>
+              <tr><th scope="row">Hosting</th><td>Vercel/Netlify, Render/Railway</td><td>Free tiers available</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Alternatives: Django, Laravel, Next.js. Pick what you can ship with.</p>
+      </div>
+    </section>
+
+    <!-- ============ STEP 8: DATA MODEL ============ -->
+    <section id="data-model" class="section section-alt">
+      <div class="container">
+        <span class="step-badge">Step 8</span>
+        <h2>Preliminary Data Model</h2>
+
+        <div class="grid grid-3">
+          <article class="card entity">
+            <h3>User</h3>
+            <ul>
+              <li>id</li>
+              <li>name</li>
+              <li>email</li>
+              <li>password_hash</li>
+              <li>created_at</li>
+            </ul>
+          </article>
+          <article class="card entity">
+            <h3>Task</h3>
+            <ul>
+              <li>id</li>
+              <li>user_id <em>(FK)</em></li>
+              <li>title</li>
+              <li>description</li>
+              <li>due_date</li>
+              <li>priority</li>
+              <li>status</li>
+              <li>created_at, updated_at</li>
+            </ul>
+          </article>
+          <article class="card entity">
+            <h3>Category <small>optional</small></h3>
+            <ul>
+              <li>id</li>
+              <li>user_id <em>(FK)</em></li>
+              <li>name</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note"><strong>Relationships:</strong> a User has many Tasks, and a Category has many Tasks.</p>
+      </div>
+    </section>
+
+    <!-- ============ STEP 9: RISKS ============ -->
+    <section id="risks" class="section">
+      <div class="container">
+        <span class="step-badge">Step 9</span>
+        <h2>Risk Assessment</h2>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Project risks and mitigations</caption>
+            <thead>
+              <tr><th scope="col">Risk</th><th scope="col">Mitigation</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Scope creep</th><td>Freeze the MVP list; log new ideas in a backlog</td></tr>
+              <tr><th scope="row">Security flaws</th><td>Use proven auth libraries; do not hand-roll crypto</td></tr>
+              <tr><th scope="row">Underestimating time</th><td>Add a 20-30% buffer to estimates</td></tr>
+              <tr><th scope="row">Lost data</th><td>Automated backups from day one</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STEP 10: TIMELINE ============ -->
+    <section id="timeline" class="section section-alt">
+      <div class="container">
+        <span class="step-badge">Step 10</span>
+        <h2>Project Plan and Timeline</h2>
+        <p class="lead">Track it in Trello, GitHub Projects or Notion. A task manager is a fitting tool for building a task manager.</p>
+
+        <ol class="timeline">
+          <li><span class="week">Week 1</span><p>Requirements and design complete</p></li>
+          <li><span class="week">Week 2</span><p>Project setup, database, auth</p></li>
+          <li><span class="week">Weeks 3-4</span><p>Task CRUD (backend and frontend)</p></li>
+          <li><span class="week">Week 5</span><p>Filters, search, categories</p></li>
+          <li><span class="week">Week 6</span><p>Testing and bug fixes</p></li>
+          <li><span class="week">Week 7</span><p>Deployment and CI/CD</p></li>
+          <li><span class="week">Week 8</span><p>Buffer, polish, launch</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DELIVERABLES ============ -->
+    <section id="deliverables" class="section">
+      <div class="container">
+        <h2>Deliverables from Stage 1</h2>
+        <ol class="deliverables">
+          <li>Vision statement and personas</li>
+          <li>Prioritized feature list (MoSCoW)</li>
+          <li>User stories with acceptance criteria</li>
+          <li>Non-functional requirements list</li>
+          <li>Preliminary tech stack and data model</li>
+          <li>Risk list and timeline</li>
+        </ol>
+        <p class="note">Together these form your Software Requirements Specification. Two to five pages is enough for a project this size.</p>
+      </div>
+    </section>
+
+    <!-- ============ NEXT STAGE ============ -->
+    <section class="cta">
+      <div class="container">
+        <h2>Next up: Stage 2, System Design</h2>
+        <p>Turn these requirements into an architecture diagram, a full database schema, and a REST API specification.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 TaskFlow Project &middot; Stage 1: Planning &amp; Requirements Analysis</p>
+      <p><a href="#top">Back to top &uarr;</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
